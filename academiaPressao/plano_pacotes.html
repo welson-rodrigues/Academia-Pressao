@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planos/Benefícios</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1px;
+    }
+
+    #profile-container {
+      max-width: 400px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    #nomeUsuario, #emailUsuario, #planoUsuario, #beneficioUsuario {
+      width: 20%;
+    }
+
+    .plano-container {
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+  </style>
+</head>
+<body>
+  <script>
+    function voltar2() {
+      window.location.href = "site.html";
+    }
+  </script>
+  <header>
+    <h1>Plano/Pacote</h1>
+  </header>
+  <section class="conteudo">
+
+    <div class="plano-container">
+      <h2>Primeiro dia</h2>
+      <p>
+        Descrição: No primeiro dia você experimenta um dia gratuito na Academia Pressão. Desfrute de acesso total às nossas instalações e aulas de alta energia, sem compromisso algum.
+      </p>
+      <h3>Pacotes/Benefícios:</h3>
+      <ul>
+        <li><strong>Pacote Mensal / Individual:</strong> <br> Acesso ilimitado a todas as aulas de grupo, garantindo variedade e motivação em sua jornada de fitness.</li>
+        <br>
+        <li><strong>Pacote mensal / Duas pessoas:</strong> <br>Desconto especial em sessões de treinamento personalizado para ambos os membros, promovendo resultados mais eficazes e personalizados.</li>
+        <br>
+        <li><strong>Pacote mensal / Familiar:</strong> <br>Admissão gratuita para eventos familiares especiais e atividades, promovendo um ambiente saudável e unindo ainda mais a família em torno do bem-estar.</li>
+        <br>
+        <li><strong>Pacote anual / Individual:</strong> <br>Consultas trimestrais com um nutricionista especializado, oferecendo orientação personalizada para maximizar seus resultados e melhorar seus hábitos alimentares.</li>
+        <br>
+        <li><strong>Pacote anual / Familiar:</strong> <br>Acesso exclusivo a aulas de grupo privadas para a família, promovendo momentos de diversão e fitness juntos, reforçando os laços familiares enquanto se mantêm ativos.</li>
+      </ul>
+    </div>
+
+    <br>
+
+    <button class="sair" type="button" onclick="voltar2()">Voltar</button>
+    
+  </section>
+</body>
+</html>

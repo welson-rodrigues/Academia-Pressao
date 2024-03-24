@@ -1,0 +1,183 @@
+/* CÓDIGOS DO REGISTRO E LOGIN DE USUÁRIOS, DEUS NOS AJUDE!!! */
+
+let usuarioLogado = null; // Inicializa a variável para armazenar informações do usuário logado
+const API_URL = "https://reqres.in/api/users"; // API de Jorge
+const users = []; // Array para armazenar dados dos usuários
+
+/* Funções de Manipulação da Interface do Usuário */
+
+// Abre o formulário de registro
+function abrirRegistro() {
+    document.getElementById('registro').style.display = 'flex'; // Define a propriedade display do elemento com ID 'registro' como 'flex'
+}
+
+// Fecha o formulário de registro
+function fecharRegistro() {
+    document.getElementById('registro').style.display = 'none'; // Define a propriedade display do elemento com ID 'registro' como 'none'
+}
+
+// Exibe o formulário de login
+function entrarBotao() {
+    document.getElementById('login').style.display = 'flex'; // Define a propriedade display do elemento com ID 'login' como 'flex'
+}
+
+// Fecha o formulário de login
+function fecharLogin() {
+    document.getElementById('login').style.display = 'none'; // Define a propriedade display do elemento com ID 'login' como 'none'
+}
+
+// Verifica se um email já está cadastrado
+function emailJaCadastrado(email) {
+    return users.some(user => user.email === email); // Verifica se algum usuário possui o mesmo email || [some] verifica se algum usuário já possui o mesmo email. Se pelo menos um usuário tiver o mesmo email, a função retorna true; caso contrário, retorna false.
+}
+
+/* Função para validar o email */
+function validarEmail(email) {
+    // validar o formato de email
+    const emailEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Caracteres populares em emails
+    return emailEX.test(email); // Retorna verdadeiro se o caracter for digitado
+}
+
+// Obtém dados da API de usuários
+async function obterDadosAPI() { // com async a função espera as outras serem executadas para continuar. async é assíncrona
+    try {
+        const response = await fetch(API_URL); // Faz uma requisição à API
+        if (response.ok) { // .ok é usado para verificar se a resposta da requisição foi bem-sucedida 
+            const data = await response.json(); // Converte a resposta para formato JSON
+            /* console.log("Usuários da API:", data.data); // Se quiser mostrar os usuários da API */
+            return data.data; // Retorna os dados obtidos da API
+        } else {
+            console.error("Erro ao obter usuários da API:", response.statusText); // Registra um erro se a requisição não for bem-sucedida
+            return [];
+        }
+    } catch (error) {
+        console.error("Erro ao obter usuários da API:", error.message); // Registra um erro se ocorrer uma exceção durante a requisição
+        return [];
+    }
+}
+
+// Registra um novo usuário
+async function registrarUsuario() {
+    const novoname = document.getElementById('novoname').value; // Obtém o valor do campo 'novoname'
+    const novoemail = document.getElementById('email').value; // Obtém o valor do campo 'email'
+    const novapassword = document.getElementById('novapassword').value; // Obtém o valor do campo 'novapassword'
+    const plano = document.getElementById('plano').value; // Obtém o valor do campo 'plano'
+
+    // Verifica se já existe um usuário logado
+    if (usuarioLogado) {
+        alert("Por favor, faça logout antes de registrar um novo usuário."); // Exibe um alerta se já houver um usuário logado
+        return;
+    }
+
+    // Verifica se o email é válido
+    if (!validarEmail(novoemail)) { // se o email não for válido fica verdadeiro
+        alert("Por favor, insira um email válido."); // Exibe um alerta se o email não for válido
+        return;
+    }
+
+    // Verifica se o email já está cadastrado
+    if (users.some(user => user.email === novoemail)) { // [some] verifica se algum usuário já possui o mesmo email. Se pelo menos um usuário tiver o mesmo email, a função retorna true; caso contrário, retorna false.
+        alert("Email já cadastrado. Por favor, use outro email."); // Exibe um alerta se o email já estiver cadastrado
+        return;
+    }
+
+    // Verifica se o nome contém apenas letras
+    if (!/^[a-zA-Z]+$/.test(novoname)) {
+        alert("Por favor, insira um nome válido (apenas letras)."); // Exibe um alerta se o nome não contiver apenas letras
+        return;
+    }
+
+    // Requisição à API
+    const requestBody = {
+        name: novoname,
+        email: novoemail,
+        password: novapassword,
+        plano: plano,
+    };
+
+    try {
+        const response = await fetch(API_URL, {
+            method: 'POST', // enviar dados 
+            headers: {
+                'Content-Type': 'application/json', //  enviando dados no formato JSON, configurando o cabeçalho 'Content-Type' para 'application/json'
+            },
+            body: JSON.stringify(requestBody), // corpo da requisição. 
+        });
+
+        if (response.ok) { // resposta da requisição, pode ser sucesso ou erro
+            const newUser = await response.json();
+            users.push(newUser);
+
+            // Define o usuário logado como null após o registro
+            usuarioLogado = null;
+
+            console.log("Usuário registrado com sucesso!");
+            console.log("Detalhes do usuário registrado:", newUser);
+
+            alert("Usuário registrado com sucesso!");
+            fecharRegistro();
+        } else {
+            /* console.error("Erro ao registrar usuário:", response.statusText); */
+            alert("Erro ao registrar usuário. Por favor, tente novamente.", response.statusText); // response.statusText representa o status textual da resposta HTTP. fornece uma mensagem de erro mais informativa
+        }
+    } catch (error) {
+        /* console.error("Erro ao registrar usuário:", error.message); */
+        alert("Erro ao registrar usuário. Por favor, tente novamente.", error.message);
+    }
+}
+
+// Realiza o login do usuário
+async function entrarLogin() {
+    const emailEntrar = document.getElementById('emailEntrar').value; // Obtém o valor do campo 'emailEntrar'
+    const passwordEntrar = document.getElementById('passwordEntrar').value; // Obtém o valor do campo 'passwordEntrar'
+
+    // Verifica se o email é válido
+    if (!validarEmail(emailEntrar)) {
+        alert("Por favor, insira um email válido."); // Exibe um alerta se o email não for válido
+        return;
+    }
+
+    // Verifica se já existe um usuário logado
+   /*  if (usuarioLogado) {
+        alert("Por favor, faça logout antes de entrar com outro usuário."); // Exibe um alerta se já houver um usuário logado
+        return;
+    } */
+
+    // Encontra o usuário pelo email
+    const user = users.find(u => u.email === emailEntrar); // procura se no arrya users o email é o mesmo de emailEntrar
+
+    if (user) {
+        // Verifica se a senha foi digitada
+        if (passwordEntrar.trim() === "") { // trim() remove os espaços em branco
+            alert("Por favor, insira a senha."); // Exibe um alerta se a senha não for fornecida
+            return;
+        }
+
+        // Verifica se a senha fornecida no login é igual à senha registrada
+        if (user.password === passwordEntrar) {
+            usuarioLogado = user;
+            localStorage.setItem('nomeUsuario', user.name);
+            localStorage.setItem('emailUsuario', user.email);
+            localStorage.setItem('planoUsuario', user.plano);
+
+            localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogado));
+
+            alert(`Login bem-sucedido! Bem-vindo(a) ${user.name}. Seu perfil foi liberado.`);
+            /* console.log("Detalhes do usuário logado:", user); */
+            usuarioLogado = user; // Define o usuário como logado
+            /* window.location.href = 'perfil.html'; assim que entrar joga para a tela de perfil*/
+            fecharLogin();
+
+             // Redireciona para a página de perfil após o login bem-sucedido
+        } else {
+            alert("Credenciais inválidas. Tente novamente."); // Exibe um alerta se as credenciais não forem válidas
+        }
+    } else {
+        alert("Credenciais inválidas. Tente novamente.");
+        console.log("Credenciais inválidas. Tente novamente.");
+    }
+}
+
+function saiba_mais() {
+    window.location.href = "planos_beneficios.html";
+}

@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Suplementos</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="login.js"></script>
+    <style>
+        .red{
+            background-color: black;
+        }
+        img {
+            opacity : 0.2;
+        }
+        .bosta {
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+  <header>
+        <nav>
+            <ul>
+                <li><a class="voltar2" href="site.html">Suplementos</a></li>
+                <li><a class="voltar" href="site.html">Voltar</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- <div class="red">
+        <img src="https://cdn.glitch.global/34817ff0-d4d5-425a-90a3-e1ef4fc2064a/academia.jpg?v=1696956453384" width="110%" alt="Imagem_Academia">
+    </div> -->
+
+    <!-- <div class="custom-search">
+        <form action="#" method="get">
+            <input type="text" name="q" placeholder="Pesquisar...">
+            <button type="submit">Buscar</button>
+        </form>
+    </div> -->
+
+    <section class="horarios">
+        <form action="/process_order" method="post">
+            <h2>Whey Protein</h2>
+            <table>
+                <tr>
+                    <th>Selecionar</th>
+                    <th>Tipos</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="product[]" value="Whey Max Titanium Pro/ 1kg chocolate"></td>
+                    <td><a href="#">Whey Max Titanium Pro/ 1kg chocolate</a></td>
+                    <td><input type="number" name="quantity[]" value="1" min="1"></td>
+                    <td>R$ 100,99</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox" name="product[]" value="Whey Max Titanium Pro/ 1kg chocolate"></td>
+                    <td><a href="#">Whey 100% Pure - 907g Coockies</a></td>
+                    <td><input type="number" name="quantity[]" value="1" min="1"></td>
+                    <td>R$ 128,99</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox" name="product[]" value="Whey Max Titanium Pro/ 1kg chocolate"></td>
+                    <td><a href="#">Nutri Whey isolado e Concentrado</a></td>
+                    <td><input type="number" name="quantity[]" value="1" min="1"></td>
+                    <td>R$ 68,99</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox" name="product[]" value="Whey Max Titanium Pro/ 1kg chocolate"></td>
+                    <td><a href="#">100% Whey Max Titanium</a></td>
+                    <td><input type="number" name="quantity[]" value="1" min="1"></td>
+                    <td>R$ 98,00</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox" name="product[]" value="Whey Max Titanium Pro/ 1kg chocolate"></td>
+                    <td><a href="#">Optimum Isolate Whey Protein Baunilha/ 2kg</a></td>
+                    <td><input type="number" name="quantity[]" value="1" min="1"></td>
+                    <td>R$ 118,98</td>
+                </tr>
+                
+            </table>
+    
+            <h2>Creatina</h2>
+            <table>
+                <tr>
+                    <th>Selecionar</th>
+                    <th>Tipos</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="product[]" value="Creatina 60 capsulas/ integralmédica"></td>
+                    <td><a href="#">Creatina 60 capsulas/ integralmédica</a></td>
+                    <td><input type="number" name="quantity[]" value="1" min="1"></td>
+                    <td>R$ 65,00</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox" name="product[]" value="Creatina 60 capsulas/ integralmédica"></td>
+                    <td><a href="#">Creatina Monohidratada Growth 100g</a></td>
+                    <td><input type="number" name="quantity[]" value="1" min="1"></td>
+                    <td>R$ 80,00</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox" name="product[]" value="Creatina 60 capsulas/ integralmédica"></td>
+                    <td><a href="#">Creatina Monohidratada 300g</a></td>
+                    <td><input type="number" name="quantity[]" value="1" min="1"></td>
+                    <td>R$ 105,00</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox" name="product[]" value="Creatina 60 capsulas/ integralmédica"></td>
+                    <td><a href="#">Creatina Turbo 300g</a></td>
+                    <td><input type="number" name="quantity[]" value="1" min="1"></td>
+                    <td>R$ 62,00</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox" name="product[]" value="Creatina 60 capsulas/ integralmédica"></td>
+                    <td><a href="#">Creatina 350g Drakness</a></td>
+                    <td><input type="number" name="quantity[]" value="1" min="1"></td>
+                    <td>R$ 205,00</td>
+                </tr>
+
+            </table>
+
+            <h2>Outros Produtos</h2>
+            <table>
+                <tr>
+                    <th>Selecionar</th>
+                    <th>Tipos</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="product[]" value="Creatina 60 capsulas/ integralmédica"></td>
+                    <td><a href="#">Magnésio Quelato 300g</a></td>
+                    <td><input type="number" name="quantity[]" value="1" min="1"></td>
+                    <td>R$ 25,00</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox" name="product[]" value="Creatina 60 capsulas/ integralmédica"></td>
+                    <td><a href="#">Omega 3/ 120 Cápsulas</a></td>
+                    <td><input type="number" name="quantity[]" value="1" min="1"></td>
+                    <td>R$ 38,66</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox" name="product[]" value="Creatina 60 capsulas/ integralmédica"></td>
+                    <td><a href="#">Maltodextrina Boost Energy</a></td>
+                    <td><input type="number" name="quantity[]" value="1" min="1"></td>
+                    <td>R$ 36,99</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox" name="product[]" value="Creatina 60 capsulas/ integralmédica"></td>
+                    <td><a href="#">Universal Nutrition GH Max/ 180 Tabletes</a></td>
+                    <td><input type="number" name="quantity[]" value="1" min="1"></td>
+                    <td>R$ 98,47</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox" name="product[]" value="Creatina 60 capsulas/ integralmédica"></td>
+                    <td><a href="#">Nuclear Rush Pré Treino 100g/ Bodyaction</a></td>
+                    <td><input type="number" name="quantity[]" value="1" min="1"></td>
+                    <td>R$ 55,68</td>
+                </tr>
+
+            </table>
+
+            <button class="bosta" type="submit">Adicionar ao Carrinho</button>
+        </form>
+    </section>
+    
+    
+</body>
+</html>

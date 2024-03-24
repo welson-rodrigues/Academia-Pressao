@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Academia</title>
+  <!-- importei as fontes -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="login.js"></script>
+    <!--<link rel="stylesheet" href="login.css">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@600&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet"/>
+
+</head>
+
+<body>
+    <header>
+        <h1>Academia Pressão</h1>
+        <nav>
+            <ul>
+                <li><a href="treinadores.html">Treinadores</a></li>
+              <li><a href="suplementos.html">Suplementos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            <li><button class="login-button" onclick="abrirRegistro()">Inscrição</button></li>
+            <li><button class="login-button2" onclick="entrarBotao()">Entrar</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="overlay" id="registro">
+        <div class="login-container">
+            <h2>Registro</h2>
+            <form id="login-form-registro">
+                <label for="novoname">Usuário:</label>
+                <input type="text" id="novoname" name="novoname" required>
+    
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="novoemail" required>
+    
+                <label for="novapassword">Senha:</label>
+                <input type="password" id="novapassword" name="novapassword" required>
+    
+                <label for="plano">Plano:</label>
+                <select id="plano" name="plano" required>
+                    <option value="pacote_mensal_individual">Pacote Mensal / Individual</option>
+                    <option value="pacote_mensal_dupla">Pacote Mensal / Duas Pessoas</option>
+                    <option value="pacote_mensal_familiar">Pacote Mensal / Familiar</option>
+                    <option value="pacote_anual_individual">Pacote Anual / Individual</option>
+                    <option value="pacote_anual_familiar">Pacote Anual / Familiar</option>
+                </select>
+    
+                <button type="button" onclick="fecharRegistro()">Fechar</button>
+                <button type="button" onclick="registrarUsuario()">Registrar</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="overlay" id="login">
+        <div class="login-container">
+            <h2>Entrar</h2>
+            <form id="login-form-entrar">
+                <label for="emailEntrar">Email:</label>
+                <input type="text" id="emailEntrar" name="emailEntrar" required>
+            
+            
+                <label for="passwordEntrar">Senha:</label>
+                <input type="password" id="passwordEntrar" name="passwordEntrar" required>
+    
+            
+                <button type="button" onclick="fecharLogin()">Fechar</button>
+                <button type="button" onclick="entrarLogin()">Entrar</button>
+                <button type="button" onclick="sairUsuario()">Sair do Usuário</button>
+            </form>
+        </div>
+    </div>
+    
+    <section class="conteudo">
+        <h2>Bem-vindo à Academia Pressão</h2>
+        <p>O seu destino para uma transformação completa. Aqui, você tem a oportunidade de remodelar seu corpo, fortalecer sua mente e alcançar níveis superiores de bem-estar.<br />
+          Na Academia Pressão, nosso compromisso vai além da busca de uma forma física ideal, pois reconhecemos a importância da saúde mental em sua jornada.<br />
+          Ao se juntar a nós, você abrirá portas para um caminho enriquecedor, que o guiará para uma versão mais forte, saudável e equilibrada de si mesmo.<br /></p>
+      <div class="slider">
+            <div class="slide"><img src="https://cdn.glitch.global/34817ff0-d4d5-425a-90a3-e1ef4fc2064a/academia.jpg?v=1696956453384" width="880px" alt="Imagem 1"></div>
+            <div class="slide"><img src="https://cdn.glitch.global/34817ff0-d4d5-425a-90a3-e1ef4fc2064a/blur-1972569_1280.jpg?v=1697136349020" width="880px" alt="Imagem 2"></div>
+            <div class="slide"><img src="https://cdn.glitch.global/34817ff0-d4d5-425a-90a3-e1ef4fc2064a/crossfit-1126999_1280.jpg?v=1697136359242" width="880px" alt="Imagem 3"></div>
+            <div class="slide"><img src="https://cdn.glitch.global/34817ff0-d4d5-425a-90a3-e1ef4fc2064a/boxing-555735_1280.jpg?v=1697136354683" width="880px" alt="Imagem 4"></div>
+            <div class="slide"><img src="https://cdn.glitch.global/34817ff0-d4d5-425a-90a3-e1ef4fc2064a/fitness-826940_1280.jpg?v=1697136368410" width="880px" alt="Imagem 5"></div>
+        </div>
+    </section>
+  <header>
+        <nav>
+            <ul>
+                <li><h1>Horários</h1></li>
+            </ul>
+        </nav>
+    </header>
+  <section class="horarios">
+        <!--<h2>Horários de Treino</h2>-->
+        <table>
+            <tr>
+                <th class="dia">Dia</th>
+                <th>Horário</th>
+            </tr>
+            <tr>
+                <td>Segunda-feira</td>
+                <td>05:00 - 21:00</td>
+            </tr>
+            <tr>
+                <td>Terça-feira</td>
+                <td>05:30 - 22:30</td>
+            </tr>
+            <tr>
+                <td>Quarta-feira</td>
+                <td>04:30 - 22:00</td>
+            </tr>
+            <tr>
+                <td>Quinta-feira</td>
+                <td>05:00 - 21:00</td>
+            </tr>
+            <tr>
+                <td>Sexta-feira</td>
+                <td>05:00 - 20:00</td>
+            </tr>
+        </table>
+    </section>
+  <header>
+        <nav>
+            <ul>
+                <li><h1>Preços</h1></li>
+            </ul>
+        </nav>
+    </header>
+  <section class="horarios">
+        <!--<h2>Preços</h2>-->
+        <table>
+            <tr>
+                <th class="fonte">Primeiro dia</th>
+                <th>Preço</th>
+            </tr>
+            <tr>
+                <td>Pacote mensal / Individual</td>
+                <td>R$ 60,00</td>
+            </tr>
+            <tr>
+                <td>Pacote mensal / Duas pessoas</td>
+                <td>R$ 90,00</td>
+            </tr>
+            <tr>
+                <td>Pacote mensal / Familiar</td>
+                <td>R$ 120,00</td>
+            </tr>
+            <tr>
+                <td>Pacote anual / Individual</td>
+                <td>R$ 212,00</td>
+            </tr>
+            <tr>
+                <td>Pacote anual / Familiar</td>
+                <td>R$ 280,00</td>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Academia Pressão</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,422 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-position: center center;
+    background-size: cover;
+    background-color: #333333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    background-attachment: fixed;
+}
+
+header li a{
+  font-size: 23px;
+}
+
+header h1 {
+    font-size: 40px;
+    color: orange;
+    font-family: 'Geologica', sans-serif;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 3px; /*AQUI MUDA A POSIÇÃO DOS BOTÕES DE SUPLEMENTOS, CONTATO E TREINADORES*/
+}
+
+table td a{
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #ed9121;
+    font-family: 'Geologica', sans-serif;
+}
+
+.banner img {
+    max-width: 100%;
+    height: auto;
+}
+.conteudo {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* Oculta qualquer conteúdo fora do elemento */
+}
+
+.slider {
+    display: flex;
+    /* Torna os slides flexíveis (um ao lado do outro) */
+    overflow-x: auto;
+    /* Adiciona uma barra de rolagem horizontal */
+    scroll-snap-type: x mandatory;
+    /* Faz com que os slides se ajustem a cada posição de rolagem */
+}
+
+.slide {
+  flex: 0 0 auto;
+  /* mantem o tamanho fixo */
+  scroll-snap-align: start;
+  /* Alinha cada slide ao início da área de rolagem */
+  min-width: 100%;
+  padding: 0px;
+  text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.conteudo h2{
+  font-family: 'Geologica', sans-serif;
+  font-size: 32px;
+}
+
+.conteudo p{
+  font-size: 25px;
+}
+
+.treinadores {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.treinadores h2{
+  text-align: center;
+  font-size: 35px;
+}
+
+.treinador {
+    text-align: center;
+    margin: 20px;
+}
+
+.treinador img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.treinador h3{
+  font-size: 25px;
+}
+
+.treinador p{
+  font-size: 22px;
+}
+
+.horarios {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Geologica', sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #cccccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+table td{
+  font-family: 'Roboto', sans-serif;
+}
+
+.precos {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 25px;
+}
+.contacto {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 40px;
+}
+.contacto, p{
+  font-size: 35px;
+}
+footer {
+    text-align: center;
+    background-color: #333333;
+    color: white;
+    padding: 10px 0;
+}
+footer p{
+  color: orange;
+  font-family: 'Geologica', sans-serif;
+  font-size: 19px;
+}
+.treinadores img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.treinadores img:hover {
+    transform: scale(1.1);
+}
+.login-button {
+  background-color: orange;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 30px;
+  right: 120px; /* ou outro valor que você preferir */
+}
+
+.login-button:hover {
+  background-color: #808080;
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+}
+.voltar{
+  left: 20px;
+  position: absolute;
+  color: #ed9121;
+  font-family: 'Geologica', sans-serif;
+}
+.voltar2{
+  color: #ed9121;
+  font-family: 'Geologica', sans-serif;
+}
+.voltar:hover{
+  color: #808080;
+  transition: color 0.3s;
+}
+
+address a{
+  color: orange;
+  cursor: pointer;
+}
+nav ul li a:hover{
+  color: #808080;
+  transition: color 0.3s;
+}
+
+.dia{
+  font-family: 'Geologica', sans-serif;
+}
+
+/* barra de pesquisa */
+
+.custom-search {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.custom-search form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-search input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+}
+
+.custom-search button {
+    background-color: orange;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .custom-search {
+        padding: 5px;
+    }
+
+    .custom-search input[type="text"] {
+        padding: 5px;
+    }
+
+    .custom-search button {
+        padding: 5px 10px;
+    }
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#login-form-registro {
+    display: flex;
+    flex-direction: column;
+}
+
+#login-form-entrar {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+button {
+    background-color: orange;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.botao-fechar {
+  margin-bottom: 5px; /* Ajuste conforme necessário */
+}
+
+.fechar-login {
+  margin-bottom: 5px; /* Ajuste conforme necessário */
+}
+
+button:hover {
+    background-color: #808080;
+}
+.login-button2 {
+  background-color: orange;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 30px;
+  right: 10px;
+}
+
+.login-button2:hover {
+  background-color: #808080;
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.login-button, .login-button2 {
+  display: inline-block;
+  margin-right: 10px; /* ou outro valor que você preferir */
+}
+select, option{
+  margin-right: 10px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.campo{
+  color: white;
+  background-color: red;
+  display: none;
+}
+.sair{
+  background-color: orange;
+  font-size: 26px;
+}
+
+.sairP {
+  background-color: orange;
+}
+
+.saiba_mais {
+  position: relative;
+  cursor: pointer;
+}
+
+.botao_saiba_mais {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0; /* Alterado para right */
+  padding: 17px 10px;
+  background-color: orange;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.saiba_mais:hover .botao_saiba_mais {
+  display: block;
+}
